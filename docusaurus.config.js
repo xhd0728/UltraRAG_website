@@ -64,6 +64,11 @@ const config = {
             position: 'right',
             target: '_blank', // 强制新窗口打开
           },
+          {
+            label: 'Daily Paper',
+            to: '/daily-papers',
+            position: 'right',
+          },
           // 2. 博客 (靠右)
           {to: '/blog', label: 'Blog', position: 'right'},
           {
