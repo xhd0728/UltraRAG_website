@@ -59,48 +59,49 @@ const config = {
           {
             type: 'custom-megaMenu',
             position: 'left',
-            label: 'Docs',
+            label: '文档',
             items: [
               {
-                title: 'Tutorial',
+                title: '教程',
                 items: [
-                  { label: 'Home', href: 'https://ultrarag.openbmb.cn/', target: '_blank' },
-                  { label: 'Installation', href: 'https://ultrarag.openbmb.cn/pages/cn/getting_started/installation', target: '_blank' },
-                  { label: 'Quick Start', href: 'https://ultrarag.openbmb.cn/pages/cn/getting_started/quick_start', target: '_blank' },
+                  { label: '主页', href: 'https://ultrarag.openbmb.cn/', target: '_blank' },
+                  { label: '安装', href: 'https://ultrarag.openbmb.cn/pages/cn/getting_started/installation', target: '_blank' },
+                  { label: '运行基准实验', href: 'https://ultrarag.openbmb.cn/pages/cn/getting_started/quick_start', target: '_blank' },
+                  { label: '启动交互界面', href: 'https://ultrarag.openbmb.cn/pages/cn/ui/start', target: '_blank' },
                 ]
               },
               {
-                title: 'News',
+                title: '最新动态',
                 items: [
-                  { label: 'Blog', to: '/blog' },             
+                  { label: '博客', to: '/blog' },             
                 ]
-              }
+              },
             ]
           },
           // Products Mega Menu
           {
             type: 'custom-megaMenu',
             position: 'left',
-            label: 'Projects',
+            label: '项目',
             items: [
               {
                 title: 'UltraRAG',
                 items: [
-                  { label: 'Demo', to: '/daily-papers' },
-                  { label: 'Benchmark & Corpus', href: 'https://modelscope.cn/datasets/UltraRAG/UltraRAG_Benchmark', target: '_blank' },
+                  { label: '试玩', to: '/daily-papers' },
+                  { label: '数据集 & 语料库', href: 'https://modelscope.cn/datasets/UltraRAG/UltraRAG_Benchmark', target: '_blank' },
                 ]
               },
               {
-                title: 'Model',
+                title: '模型',
                 items: [
                   { label: 'AgentCPM-Report', href: 'https://huggingface.co/openbmb/AgentCPM-Report', target: '_blank' },
                   { label: 'MiniCPM-Embedding-Light', href: 'https://huggingface.co/openbmb/MiniCPM-Embedding-Light', target: '_blank' },
                 ]
               },
               {
-                title: 'Research',
+                title: '研究',
                 items: [
-                  { label: 'Daily Paper', to: '/daily-papers' },
+                  { label: '每日论文', to: '/daily-papers' },
                 ]
               }
             ]
@@ -109,19 +110,19 @@ const config = {
           {
             type: 'custom-megaMenu',
             position: 'left',
-            label: 'Team',
+            label: '团队',
             items: [
               {
-                title: 'About Us',
+                title: '关于我们',
                 items: [
-                  { label: 'Meet the Team', to: '/team' },
+                  { label: '团队成员', to: '/team' },
                 ]
               },
               {
-                title: 'Connect',
+                title: '联系',
                 items: [
-                  { label: 'Contact Us', to: '/contact' },
-                  { label: 'Join Us', href: 'https://nlp.csai.tsinghua.edu.cn/job/29', target: '_blank' }, // 示例占位
+                  { label: '联系我们', to: '/contact' },
+                  { label: '加入我们', href: 'https://nlp.csai.tsinghua.edu.cn/job/29', target: '_blank' }, // 示例占位
                 ]
               }
             ]

@@ -214,9 +214,9 @@ export default function DailyPapers() {
             {/* Papers List */}
             <div className={styles.mainContent}>
               <header className={styles.pageHeader}>
-                <h1 className={styles.pageTitle}>RAG Paper Daily</h1>
+                <h1 className={styles.pageTitle}>RAG 每日论文</h1>
                 <p className={styles.pageSubtitle}>
-                  Discover Recent Progress in Retrieval-Augmented Generation.
+                  了解检索增强生成领域的最新进展。
                 </p>
               </header>
 

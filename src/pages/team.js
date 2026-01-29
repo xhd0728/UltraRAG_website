@@ -7,17 +7,25 @@ import styles from './team.module.css';
 // 数据配置：保持这个短路径不变，非常干净
 const TeamConfig = [
   {
-    groupName: 'Advisor',
+    groupName: '项目负责人',
     members: [
-      { name: 'Shuliang Liu', role: 'OpenAI', avatarSrc: '/img/team/lsl.jpg' },
+      { name: '闫宇坤', role: 'TsinghuaNLP', avatarSrc: '/img/team/yyk.jpg' },
     ]
   },
   {
-    groupName: 'Core Team',
+    groupName: '核心贡献者',
     members: [
-      { name: 'Sen Mei', role: 'Developer', avatarSrc: '/img/team/ms.png' },
-      { name: 'Haidong Xin', role: 'Developer', avatarSrc: '/img/team/xhd.jpg' },
-      { name: 'Chunyi Peng', role: 'Developer', avatarSrc: '/img/team/pcy.jpg' },
+      { name: '梅森', role: 'TsinghuaNLP', avatarSrc: '/img/team/ms.png' },
+      { name: '辛海东', role: 'NEUIR', avatarSrc: '/img/team/xhd.jpg' },
+      { name: '彭淳毅', role: 'NEUIR', avatarSrc: '/img/team/pcy.jpg' },
+    ]
+  },
+  {
+    groupName: '贡献者',
+    members: [
+      { name: '李奕杉', role: 'OpenBMB', avatarSrc: '/img/team/lys.jpg' },
+      { name: '刘书良', role: 'NEUIR', avatarSrc: '/img/team/lsl.jpg' },
+      { name: '王逸轩', role: 'TsinghuaNLP', avatarSrc: '/img/team/wyx.jpg' },
     ]
   },
 ];
@@ -28,8 +36,8 @@ export default function Team() {
       <div className={styles.teamPageContainer}>
         <div className="container">
           <div className={styles.headerSection}>
-            <h1>Meet the Team</h1>
-            <p>The minds behind UltraRAG from THUNLP & OpenBMB.</p>
+            <h1>团队成员</h1>
+            <p>The minds behind UltraRAG.</p>
           </div>
           
           {TeamConfig.map((group, idx) => (
