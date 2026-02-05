@@ -1,128 +1,167 @@
 /* src/css/custom.css */
 :root {
-  /* vLLM 风格核心色板 */
-  --ifm-color-primary: #2563eb; /* vLLM 那个很亮的蓝色 */
-  --ifm-color-primary-dark: #1d4ed8;
-  --ifm-color-primary-light: #3b82f6;
+  /* Seed 风格核心色板 */
+  --ifm-color-primary: #000000;
+  --ifm-color-primary-dark: #333333;
+  --ifm-color-primary-light: #666666;
   
   --site-bg-color: #ffffff;
   --site-text-color: #111827;
-  --site-highlight-blue: #3b82f6; /* 标题里的蓝色高亮 */
-  --site-button-yellow: #fbbf24; /* Get Started 按钮的黄色 */
-  --site-button-yellow-hover: #f59e0b;
+  
+  /* 导航栏高度 */
+  --ifm-navbar-height: 60px;
 }
 
-/* 强制覆盖 Docusaurus 默认变量，确保是亮色模式 */
+/* 强制覆盖 Docusaurus 默认变量 */
 [data-theme='light'] {
   --ifm-background-color: #ffffff;
   --ifm-font-color-base: #1f2937;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* 因为导航栏是 fixed 定位，Hero区域需要延伸到顶部 */
 .main-wrapper {
   padding-top: 0;
 }
 
-/* 导航栏样式微调：沉浸式毛玻璃效果 (Apple 风格) */
+/* 导航栏样式：亮色毛玻璃 (Seed 风格) */
 .navbar {
-  /* 固定定位，让导航栏浮在内容之上 */
   position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-  
-  /* 关键：半透明背景 + 模糊滤镜 = 毛玻璃效果 */
-  background-color: rgba(0, 0, 0, 0.4); /* 40% 透明黑色 */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   box-shadow: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding: 0;
-  height: 48px;
-  min-height: 48px;
+  height: 60px;
+  min-height: 60px;
 }
 
-.navbar__title {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.92); /* 浅色文字适配深色毛玻璃背景 */
-}
+/* ========== 终极三段式布局 (Absolute Positioning) ========== */
 
-/* 导航链接 - 浅色适配毛玻璃 */
-.navbar__item {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.navbar__item:hover {
-  color: #ffffff;
-}
-
-/* 导航栏 Logo 放大 */
-.navbar__logo {
-  height: 40px;
-}
-
-.navbar__logo img {
-  height: 100%;
-  width: auto;
-}
-
-/* 导航栏内容居中约束 - 模仿 Apple 风格 */
 .navbar__inner {
-  max-width: 100%;
+  display: flex;
+  justify-content: center; /* 让未定位的元素（菜单）自然居中 */
+  align-items: center;
+  position: relative;
   width: 100%;
-  padding: 0 1rem;
-  justify-content: center !important; /* Center everything */
+  max-width: 100%;
+  padding: 0;
 }
 
-/* 确保 Logo 旁边不要自动撑开 */
+/* 1. 左侧 Logo：绝对定位 */
 .navbar__brand {
-  margin-right: 0;
+  position: absolute !important;
+  left: 32px; /* 距离左侧间距 */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20; /* 确保在最上层 */
+  margin-right: 0 !important;
 }
 
-/* 所有的导航栏项目（Logo 和 链接）统一间距 */
-.navbar__items {
-  gap: 2rem; /* Uniform spacing */
-  justify-content: center;
-  flex: none !important; /* 不要撑满，保持紧凑 */
+.navbar__logo {
+  height: 28px;
 }
 
-/* 隐藏右侧空容器（如果存在） */
+/* 2. 右侧按钮组：绝对定位 */
 .navbar__items--right {
-  display: none;
+  position: absolute !important;
+  right: 32px; /* 距离右侧间距 */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  margin-left: 0 !important;
 }
 
+/* 3. 中间菜单：自然居中 */
+/* 选中包含 Logo 和 菜单项 的那个容器 */
+.navbar__inner > .navbar__items:not(.navbar__items--right) {
+  display: flex;
+  justify-content: center; /* 菜单项居中 */
+  align-items: center;
+  width: 100%; /* 占满整行，确保居中是相对于整行的 */
+  gap: 12px;
+  /* 由于 Logo 已经绝对定位脱离了文档流，它不会影响 Flex 居中计算 */
+}
+
+/* 导航链接样式 */
+.navbar__item {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 8px 16px;
+}
+
+.navbar__item:hover, .navbar__item--active {
+  color: #000000;
+  background: transparent !important;
+}
+
+/* 语言切换 & Github 样式 */
+.navbar__items--right .dropdown__toggle {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  border: none;
+}
+
+.navbar__items--right .dropdown__toggle:hover {
+  background-color: #e8e8e8;
+}
+
+/* 隐藏语言切换里的图标 */
+.navbar__items--right .navbar__item.dropdown .navbar__link svg,
+.navbar__items--right .dropdown__toggle::before {
+  display: none !important;
+}
+
+/* 移动端适配 */
 @media (max-width: 996px) {
   .navbar__inner {
-    max-width: 100%;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  
+  .navbar__brand {
+    position: static !important;
+    transform: none;
+  }
+  
+  .navbar__items--right {
+    position: static !important;
+    transform: none;
+  }
+  
+  .navbar__inner > .navbar__items:not(.navbar__items--right) {
+    display: none; /* 移动端隐藏中间菜单，通常 Docusaurus 会显示汉堡菜单 */
   }
 }
 
-
-
-/* --- GitHub 图标完美复刻 --- */
-/* The .header-github-link styles are removed as we use a custom React component now */
-
-/* Footer - Apple 风格浅灰文字 */
+/* Footer - 极简灰 */
 .footer {
-  background-color: #f5f5f7;
-  color: #9ca3af;
+  background-color: #fafafa;
+  color: #666;
+  border-top: 1px solid #eee;
 }
 
 .footer__copyright {
-  color: #9ca3af;
+  color: #999;
   font-size: 12px;
 }
 
-/* Blog video: full width and rounded */
 .blogVideo {
   width: 100%;
-  max-width: 100%;
-  display: block;
   border-radius: 12px;
   margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }

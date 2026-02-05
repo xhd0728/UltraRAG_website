@@ -18,8 +18,16 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans', 'en'],
+    localeConfigs: {
+      'zh-Hans': {
+        label: '中文',
+      },
+      en: {
+        label: 'EN',
+      },
+    },
   },
 
   presets: [
@@ -52,9 +60,15 @@ const config = {
         // title: 'UltraRAG',
         logo: {
           alt: 'UltraRAG Logo',
-          src: 'img/logo.svg',
+          src: 'img/_UltraRAG_logo.png',
         },
         items: [
+          // ========== 中间区域菜单 (position: left，但会通过 CSS 居中) ==========
+          {
+            to: '/',
+            label: '首页',
+            position: 'left',
+          },
           // Docs Mega Menu
           {
             type: 'custom-megaMenu',
@@ -122,17 +136,23 @@ const config = {
                 title: '联系',
                 items: [
                   { label: '联系我们', to: '/contact' },
-                  { label: '加入我们', href: 'https://nlp.csai.tsinghua.edu.cn/job/29', target: '_blank' }, // 示例占位
+                  { label: '加入我们', href: 'https://nlp.csai.tsinghua.edu.cn/job/29', target: '_blank' },
                 ]
               }
             ]
           },
-          // GitHub Star Button
+          // ========== 右侧区域 ==========
+          // GitHub Star Button（放在语言切换左侧）
           {
             type: 'custom-githubStar',
-            position: 'left',
+            position: 'right',
             repo: 'OpenBMB/UltraRAG',
             href: 'https://github.com/OpenBMB/UltraRAG',
+          },
+          // 语言切换按钮（最右侧）
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
         ],
       },

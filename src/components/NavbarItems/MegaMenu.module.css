@@ -1,6 +1,6 @@
 /* 导航栏项容器 */
 .megaMenuContainer {
-  position: static !important; /* 关键：让下拉框相对于整个 navbar 定位 */
+  position: static !important;
   height: 100%;
   display: flex;
   align-items: center;
@@ -8,11 +8,11 @@
 
 .megaMenuTrigger {
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.85); /* 浅色文字适配深色毛玻璃导航栏 */
+  font-size: 14px;
+  font-weight: 500;
+  color: #555555; /* 深色文字适配亮色导航栏 */
   transition: color 0.2s;
-  padding: 0 12px;
+  padding: 0 16px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -20,45 +20,44 @@
 
 .megaMenuTrigger:hover,
 .megaMenuTrigger.active {
-  color: #ffffff;
-  opacity: 1;
+  color: #000000;
 }
 
-/* 全宽下拉菜单 - 深色毛玻璃效果 */
+/* 全宽下拉菜单 - 亮色毛玻璃效果 (Seed 风格) */
 .megaMenuDropdown {
-  position: fixed; /* 固定定位，确保全宽 */
-  top: var(--ifm-navbar-height); /* 紧贴导航栏下方 */
+  position: fixed;
+  top: var(--ifm-navbar-height, 60px); /* 匹配导航栏高度 */
   left: 0;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.75); /* 更深的背景 */
-  backdrop-filter: blur(12px); /* 毛玻璃效果 */
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.95); /* 亮色背景 */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   
-  /* 平滑淡入淡出 */
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-10px);
   z-index: 100;
   
-  padding: 40px 0 60px 0;
+  padding: 40px 0 50px 0;
 }
 
 .megaMenuDropdown.show {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
-
 
 /* 下拉内容区 */
 .dropdownContent {
-  max-width: 980px; /* Apple 风格的居中宽度 */
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 自适应列 */
-  gap: 40px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 48px;
+  padding: 0 40px;
 }
 
 /* 列样式 */
@@ -68,11 +67,12 @@
 }
 
 .columnTitle {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6); /* 半透明白色 */
+  font-size: 12px;
+  color: #999999; /* 灰色小标题 */
   margin-bottom: 16px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .menuList {
@@ -82,38 +82,24 @@
 }
 
 .menuItem {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .menuLink {
-  font-size: 1.1rem; /* 稍大的字体 */
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9); /* 白色文字 */
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333; /* 深色链接 */
   text-decoration: none;
   transition: color 0.2s;
   display: block;
 }
 
 .menuLink:hover {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 
-/* Dark Mode 适配 */
-[data-theme='dark'] .megaMenuDropdown {
-  background-color: rgba(28, 28, 30, 0.98);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-[data-theme='dark'] .menuLink {
-  color: #f5f5f7;
-}
-
-[data-theme='dark'] .columnTitle {
-  color: #86868b;
-}
-
-/* 移动端隐藏 (Docusaurus 会自动处理移动端侧边栏，这里只需隐藏桌面版菜单) */
+/* 移动端隐藏 */
 @media (max-width: 996px) {
   .megaMenuContainer {
     display: none;
