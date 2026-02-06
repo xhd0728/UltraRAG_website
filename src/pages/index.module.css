@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 32px; /* 缩小文字和图片之间的间距 */
 }
 
 .heroTextWrapper {
@@ -112,10 +112,11 @@
 }
 
 .heroImage {
-  flex: 0.7; /* 图片区域缩小 */
+  flex: 0.7;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-left: -40px; /* 向左靠近文字 */
 }
 
 .heroImgElement {

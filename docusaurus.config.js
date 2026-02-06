@@ -102,6 +102,7 @@ const config = {
             type: 'custom-megaMenu',
             position: 'left',
             label: '团队',
+            to: '/team',
             items: [
               {
                 title: '关于我们',
