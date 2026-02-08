@@ -14,28 +14,28 @@ const FeaturesList = [
     title: '低代码编排复杂流程',
     tag: 'Pipeline',
     desc: '原生支持串行、循环与条件分支等控制结构。开发者仅需编写 YAML 配置文件，即可在数十行代码内实现复杂的迭代式 RAG 逻辑。',
-    image: 'img/feature/pipeline.png',
+    image: 'img/feature/pipeline.jpg',
     link: '/docs/pipeline'
   },
   {
     title: '模块化扩展与复现',
     tag: 'Modular',
     desc: '基于 MCP 架构将功能解耦为独立 Server。新功能仅需以函数级 Tool 形式注册，即可无缝接入流程，实现极高的复用性。',
-    image: 'img/feature/server.png',
+    image: 'img/feature/server.jpg',
     link: '/docs/server'
   },
   {
     title: '统一评测与基准对比',
     tag: 'Benchmark',
     desc: '内置标准化评测流程，开箱即用主流科研 Benchmark。通过统一指标管理与基线集成，大幅提升实验的可复现性与对比效率。',
-    image: 'img/feature/benchmark.png',
+    image: 'img/feature/benchmark.jpg',
     link: '/docs/benchmark'
   },
   {
     title: '交互原型快速生成',
     tag: 'UI Generation',
     desc: '告别繁琐的 UI 开发。仅需一行命令，即可将 Pipeline 逻辑瞬间转化为可交互的对话式 Web UI，缩短从算法到演示的距离。',
-    image: 'img/feature/ui.png',
+    image: 'img/feature/ui.jpg',
     link: '/docs/ui'
   },
 ];
@@ -52,7 +52,6 @@ function HeroSection() {
           </h1>
           <p className={styles.heroSubtitle}>
             拒绝"盲盒"开发，让每一行推理逻辑都看得见。<br/>
-            模块化、可解释、高精度的 RAG 框架。
           </p>
           
           <div className={styles.heroButtons}>
@@ -96,7 +95,7 @@ function HeroSection() {
 
         <div className={styles.heroImage}>
           <img 
-            src={useBaseUrl('img/home/home.png')} 
+            src={useBaseUrl('img/home/home.jpg')} 
             className={styles.heroImgElement} 
             alt="UltraRAG Pipeline Architecture" 
           />
