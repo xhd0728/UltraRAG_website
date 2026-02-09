@@ -90,7 +90,7 @@ const config = {
                 title: 'Papers',
                 titleZh: '论文',
                 items: [
-                  { label: 'Featured Papers', labelZh: '精选论文', to: '/research#papers' },
+                  { label: 'Selected Papers', labelZh: '精选论文', to: '/research#papers' },
                 ]
               },
             ]

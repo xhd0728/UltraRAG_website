@@ -10,7 +10,7 @@ const TopGroups = {
     {
       groupName: 'Founder',
       members: [
-        { name: 'Yukun Yan', title: 'Overall Planning & Lead', role: 'TsinghuaNLP', avatarSrc: '/img/team/yyk.jpg', link: 'https://scholar.google.com/citations?user=B88nSvIAAAAJ' },
+        { name: 'Yukun Yan', title: 'Project Lead', role: 'TsinghuaNLP', avatarSrc: '/img/team/yyk.jpg', link: 'https://scholar.google.com/citations?user=B88nSvIAAAAJ' },
       ]
     },
     {
@@ -24,7 +24,7 @@ const TopGroups = {
     {
       groupName: '发起人',
       members: [
-        { name: '闫宇坤', title: '总体规划与负责', role: 'TsinghuaNLP', avatarSrc: '/img/team/yyk.jpg', link: 'https://scholar.google.com/citations?user=B88nSvIAAAAJ' },
+        { name: '闫宇坤', title: '项目负责人', role: 'TsinghuaNLP', avatarSrc: '/img/team/yyk.jpg', link: 'https://scholar.google.com/citations?user=B88nSvIAAAAJ' },
       ]
     },
     {

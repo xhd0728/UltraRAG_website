@@ -375,7 +375,7 @@ const UI = {
     expand: 'Expand',
     unreferencedDocs: 'unreferenced documents',
     askUltraRAG: 'Ask UltraRAG',
-    exploreToday: 'What would you like to explore?',
+    exploreToday: 'What shall we explore today?',
     toastNewChat: 'New chat created',
     toastSwitchPipeline: 'Switched to',
     toastKnowledgeBase: 'Knowledge base management is available after local deployment',

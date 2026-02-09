@@ -285,7 +285,7 @@ function PapersSection() {
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
-            {isZh ? '精选论文' : 'Featured Papers'}
+            {isZh ? '精选论文' : 'Selected Papers'}
           </h2>
           <p className={styles.sectionDesc}>
             {isZh
