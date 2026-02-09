@@ -68,12 +68,27 @@
     border: 4px solid #ffffff;
     box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15);
   }
+
+  .avatarLink {
+    display: inline-block;
+    line-height: 0;
+  }
   
   .memberInfo {
     text-align: center;
   }
 
   .memberName { font-size: 1.2rem; font-weight: 700; color: #111827; margin-bottom: 0.3rem; }
+
+  .memberNameLink {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .memberNameLink:hover,
+  .memberNameLink:focus {
+    text-decoration: underline;
+  }
   
   .memberTitle {
     display: block;
